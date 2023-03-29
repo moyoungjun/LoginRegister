@@ -1,5 +1,5 @@
 server:
-  port: 1333
+  port: 8010
   tomcat:
     use-relative-redirects: true
     remote-ip-header: x-forwarded-for
@@ -11,10 +11,23 @@ spring:
     hibernate:
       ddl-auto: create
   datasource:
-    url: jdbc:mysql://localhost:3306/login?characterEncoding=utf8
+    url: jdbc:mysql://localhost:3307/login?characterEncoding=utf8
     username: root
     password: wjsansrk
     driver-class-name: com.mysql.cj.jdbc.Driver
+#  servlet:
+#    multipart:
+#      max-file-size:  300MB
+#      max-request-size: 300MB
+#
+aws:
+  s3:
+    access-key:
+    secret-key:
+    bucket-name:
+  region:
+    static: ap-northeast-2
+
 jwt:
   secretKey: hisecreykeyqwdhuqwdhquwhdioquwhdqwhdowqhdoqwhodwhqod
   expiration: 500

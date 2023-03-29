@@ -39,13 +39,15 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.thymeleaf.extras:thymeleaf-extras-springsecurity5")
+    implementation("software.amazon.awssdk:s3")
+    implementation(platform("software.amazon.awssdk:bom:2.15.0"))
     implementation("io.jsonwebtoken:jjwt-api:0.11.5")
     runtimeOnly("mysql:mysql-connector-java")
     runtimeOnly("io.jsonwebtoken:jjwt-impl:0.11.5")
     runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.11.5")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.security:spring-security-test")
-    annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
+    testImplementation("com.epages:restdocs-api-spec-mockmvc:0.16.2")
 }
 
 tasks.withType<KotlinCompile> {
@@ -58,3 +60,4 @@ tasks.withType<KotlinCompile> {
 tasks.withType<Test> {
     useJUnitPlatform()
 }
+
